@@ -14,7 +14,7 @@ interface IEntry {
   providedIn: 'root'
 })
 export class DataService {
-  url = 'http://localhost:9190/api/LogEntry';
+  url = 'http://localhost:30020/api/LogEntry';
   dataSource = new MatTableDataSource<IEntry>();
 
   constructor(private httpClient: HttpClient) {

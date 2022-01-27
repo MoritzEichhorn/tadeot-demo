@@ -13,6 +13,7 @@ services:
             SA_PASSWORD: "Password1!"
         labels:
             kompose.service.type: nodeport
+            kompose.service.nodeport.port: 30010
     morse-backend:
         image: ghcr.io/moritzeichhorn/morse-backend:latest
         ports:
@@ -23,12 +24,14 @@ services:
             - morse-database
         labels:
             kompose.service.type: nodeport
+            kompose.service.nodeport.port: 30020
     morse-frontend:
         image: ghcr.io/moritzeichhorn/morse-frontend:latest
         ports:
             - "9090:80"
         labels:
             kompose.service.type: nodeport
+            kompose.service.nodeport.port: 30030
 volumes:
   mssqlsystem: 
   mssqluser:          
