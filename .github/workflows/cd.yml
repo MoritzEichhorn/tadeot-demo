@@ -2,7 +2,8 @@ name: Morse CD
 
 on:
   push:
-    tags: [ '*' ]
+    branches:
+    - main
 
 jobs:
   build_frontend:
