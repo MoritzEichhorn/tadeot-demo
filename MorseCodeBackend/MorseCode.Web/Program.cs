@@ -14,7 +14,7 @@ namespace MorseCode.Web
 {
     public class Program
     {
-        private static string _connectionString = "Server=localhost,30010;User Id=sa;Password=Password1!";
+        private static string _connectionString = "Server=192.168.49.2,30010;User Id=sa;Password=Password1!";
 
         public static void Main(string[] args)
         {
