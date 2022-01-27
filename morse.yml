@@ -5,6 +5,7 @@ items:
     metadata:
       annotations:
         kompose.cmd: kompose convert -o morse.yml
+        kompose.service.nodeport.port: "30020"
         kompose.service.type: nodeport
         kompose.version: 1.26.0 (HEAD)
       creationTimestamp: null
@@ -14,6 +15,7 @@ items:
     spec:
       ports:
         - name: "9190"
+          nodePort: 30020
           port: 9190
           targetPort: 80
       selector:
@@ -26,6 +28,7 @@ items:
     metadata:
       annotations:
         kompose.cmd: kompose convert -o morse.yml
+        kompose.service.nodeport.port: "30010"
         kompose.service.type: nodeport
         kompose.version: 1.26.0 (HEAD)
       creationTimestamp: null
@@ -35,6 +38,7 @@ items:
     spec:
       ports:
         - name: "1433"
+          nodePort: 30010
           port: 1433
           targetPort: 1433
       selector:
@@ -47,6 +51,7 @@ items:
     metadata:
       annotations:
         kompose.cmd: kompose convert -o morse.yml
+        kompose.service.nodeport.port: "30030"
         kompose.service.type: nodeport
         kompose.version: 1.26.0 (HEAD)
       creationTimestamp: null
@@ -56,6 +61,7 @@ items:
     spec:
       ports:
         - name: "9090"
+          nodePort: 30030
           port: 9090
           targetPort: 80
       selector:
@@ -68,6 +74,7 @@ items:
     metadata:
       annotations:
         kompose.cmd: kompose convert -o morse.yml
+        kompose.service.nodeport.port: "30020"
         kompose.service.type: nodeport
         kompose.version: 1.26.0 (HEAD)
       creationTimestamp: null
@@ -84,6 +91,7 @@ items:
         metadata:
           annotations:
             kompose.cmd: kompose convert -o morse.yml
+            kompose.service.nodeport.port: "30020"
             kompose.service.type: nodeport
             kompose.version: 1.26.0 (HEAD)
           creationTimestamp: null
@@ -103,6 +111,7 @@ items:
     metadata:
       annotations:
         kompose.cmd: kompose convert -o morse.yml
+        kompose.service.nodeport.port: "30010"
         kompose.service.type: nodeport
         kompose.version: 1.26.0 (HEAD)
       creationTimestamp: null
@@ -120,6 +129,7 @@ items:
         metadata:
           annotations:
             kompose.cmd: kompose convert -o morse.yml
+            kompose.service.nodeport.port: "30010"
             kompose.service.type: nodeport
             kompose.version: 1.26.0 (HEAD)
           creationTimestamp: null
@@ -184,6 +194,7 @@ items:
     metadata:
       annotations:
         kompose.cmd: kompose convert -o morse.yml
+        kompose.service.nodeport.port: "30030"
         kompose.service.type: nodeport
         kompose.version: 1.26.0 (HEAD)
       creationTimestamp: null
@@ -200,6 +211,7 @@ items:
         metadata:
           annotations:
             kompose.cmd: kompose convert -o morse.yml
+            kompose.service.nodeport.port: "30030"
             kompose.service.type: nodeport
             kompose.version: 1.26.0 (HEAD)
           creationTimestamp: null
