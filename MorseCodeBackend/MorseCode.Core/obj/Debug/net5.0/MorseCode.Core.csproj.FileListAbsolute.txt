@@ -1,0 +1,12 @@
+/Users/eminasljivic/MorseCode/MorseCodeBackend/MorseCode.Core/bin/Debug/net5.0/MorseCode.Core.deps.json
+/Users/eminasljivic/MorseCode/MorseCodeBackend/MorseCode.Core/bin/Debug/net5.0/MorseCode.Core.dll
+/Users/eminasljivic/MorseCode/MorseCodeBackend/MorseCode.Core/bin/Debug/net5.0/ref/MorseCode.Core.dll
+/Users/eminasljivic/MorseCode/MorseCodeBackend/MorseCode.Core/bin/Debug/net5.0/MorseCode.Core.pdb
+/Users/eminasljivic/MorseCode/MorseCodeBackend/MorseCode.Core/obj/Debug/net5.0/MorseCode.Core.csproj.AssemblyReference.cache
+/Users/eminasljivic/MorseCode/MorseCodeBackend/MorseCode.Core/obj/Debug/net5.0/MorseCode.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/eminasljivic/MorseCode/MorseCodeBackend/MorseCode.Core/obj/Debug/net5.0/MorseCode.Core.AssemblyInfoInputs.cache
+/Users/eminasljivic/MorseCode/MorseCodeBackend/MorseCode.Core/obj/Debug/net5.0/MorseCode.Core.AssemblyInfo.cs
+/Users/eminasljivic/MorseCode/MorseCodeBackend/MorseCode.Core/obj/Debug/net5.0/MorseCode.Core.csproj.CoreCompileInputs.cache
+/Users/eminasljivic/MorseCode/MorseCodeBackend/MorseCode.Core/obj/Debug/net5.0/MorseCode.Core.dll
+/Users/eminasljivic/MorseCode/MorseCodeBackend/MorseCode.Core/obj/Debug/net5.0/ref/MorseCode.Core.dll
+/Users/eminasljivic/MorseCode/MorseCodeBackend/MorseCode.Core/obj/Debug/net5.0/MorseCode.Core.pdb

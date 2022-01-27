@@ -1,0 +1,27 @@
+.full-width {
+  width: 100%;
+}
+
+.card {
+  max-width: 50%;
+  width: 50%;
+}
+
+.mat-icon {
+  vertical-align: text-bottom;
+  height: 28px;
+  margin: 0 10px;
+}
+
+.spread {
+  max-width:100%;
+  width: 100%;
+  display:inline-block;
+  transform: scaleX(-10px);
+}
+
+.spread div{
+  margin: 0 10px;
+}
+
+

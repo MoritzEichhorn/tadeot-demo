@@ -1,0 +1,7 @@
+/Users/eminasljivic/MorseCode/MorseCodeBackend/MorseCode.Web/obj/Debug/net5.0/MorseCode.Web.csproj.AssemblyReference.cache
+/Users/eminasljivic/MorseCode/MorseCodeBackend/MorseCode.Web/obj/Debug/net5.0/MorseCode.Web.GeneratedMSBuildEditorConfig.editorconfig
+/Users/eminasljivic/MorseCode/MorseCodeBackend/MorseCode.Web/obj/Debug/net5.0/MorseCode.Web.AssemblyInfoInputs.cache
+/Users/eminasljivic/MorseCode/MorseCodeBackend/MorseCode.Web/obj/Debug/net5.0/MorseCode.Web.AssemblyInfo.cs
+/Users/eminasljivic/MorseCode/MorseCodeBackend/MorseCode.Web/obj/Debug/net5.0/MorseCode.Web.csproj.CoreCompileInputs.cache
+/Users/eminasljivic/MorseCode/MorseCodeBackend/MorseCode.Web/obj/Debug/net5.0/MorseCode.Web.MvcApplicationPartsAssemblyInfo.cs
+/Users/eminasljivic/MorseCode/MorseCodeBackend/MorseCode.Web/obj/Debug/net5.0/MorseCode.Web.MvcApplicationPartsAssemblyInfo.cache

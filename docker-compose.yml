@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+    morse-database:
+        image: mcr.microsoft.com/mssql/server:2017-latest
+        expose:
+            - "1433"
+        volumes:  
+            - mssqlsystem:/var/opt/mssql/ 
+            - mssqluser:/var/opt/sqlserver 
+        environment:
+            ACCEPT_EULA: "Y"
+            SA_PASSWORD: "Password1!"
+    morse-backend:
+        image: morse-backend:latest
+        build: ./MorseCodeBackend
+        ports:
+            - "9190:80"
+        links:
+            - morse-database
+        depends_on:
+            - morse-database
+    morse-frontend:
+        image: morse-frontend:latest
+        build: ./morse-translator
+        ports:
+            - "9090:80"
+volumes:
+  mssqlsystem: 
+  mssqluser:          

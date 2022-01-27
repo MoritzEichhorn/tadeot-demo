@@ -1,0 +1,36 @@
+<h1>
+  <mat-icon class="header">input</mat-icon>
+  Read Morse
+</h1>
+<div style="margin-left: 10px">
+  <button mat-mini-fab class="symbol" [disabled]="!undoAvailable" color="" (click)="addSymbol('|')" matTooltip="Add whitespace">|</button>
+  <button mat-mini-fab class="symbol" color="" (click)="addSymbol('•')" matTooltip="Add short morse">•</button>
+  <button mat-mini-fab class="symbol" color="" (click)="addSymbol('—')"  matTooltip="Add long morse">—</button>
+  <button mat-mini-fab class="symbol" [disabled]="!undoAvailable" color="" (click)="addSymbol('')" matTooltip="Next letter">
+    <mat-icon>keyboard_return</mat-icon>
+  </button>
+  <button mat-mini-fab class="symbol" [disabled]="!undoAvailable" color="" (click)="undo()" matTooltip="Remove last morse">
+    <mat-icon>undo</mat-icon>
+  </button>
+  <button mat-mini-fab class="symbol" [disabled]="!(signs.length > 0)" color="" (click)="removeLastLine()" matTooltip="Remove last row">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<div style="display: flex">
+  <mat-card style="flex: 1 1 auto;" class="card">
+    <mat-card-title>Morse</mat-card-title>
+    <p style="min-height: 100px;white-space: pre-line">{{morse}}</p>
+  </mat-card>
+  <mat-card style="flex: 1 1 auto;" class="card">
+    <mat-card-title>Alpha</mat-card-title>
+    <p>{{alpha}}</p>
+  </mat-card>
+  <div class="buttons">
+    <button mat-raised-button [disabled]="morse == ''" (click)="reset()">
+      <mat-icon>undo</mat-icon>
+    </button>
+    <button mat-raised-button color="primary" [disabled]="morse == ''" (click)="clickButton()">
+      <mat-icon>save</mat-icon>
+    </button>
+  </div>
+</div>

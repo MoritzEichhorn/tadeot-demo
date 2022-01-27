@@ -1,0 +1,7 @@
+<mat-tab-group>
+  <mat-tab label="Send morse">
+    <app-morse-code-translator (logEntryCreated)="log.updateHistory($event)"></app-morse-code-translator>
+  </mat-tab>
+  <mat-tab label="Read morse"><app-alpha-translator (logEntryCreated)="log.updateHistory($event)"></app-alpha-translator></mat-tab>
+</mat-tab-group>
+<app-morse-log-history #log></app-morse-log-history>

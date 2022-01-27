@@ -1,0 +1,24 @@
+<h1><span class="material-icons mat-icon">launch</span>Send Morse</h1>
+<div style="display: flex;">
+  <mat-card style="flex: 1 1 auto;" class="card">
+    <mat-card-title>Alpha</mat-card-title>
+    <mat-card-subtitle>Write text to send as morse code</mat-card-subtitle>
+    <mat-form-field class="full-width">
+      <textarea matInput [(ngModel)]="alpha" (ngModelChange)="generateMorse()"></textarea>
+    </mat-form-field>
+  </mat-card>
+  <mat-card style="flex: 1 1 auto;" class="card">
+    <mat-card-title>Morse</mat-card-title>
+    <p>{{morse}}</p>
+  </mat-card>
+</div>
+<div class='spread'>
+  <div style='float: left;'>
+    <button mat-raised-button [disabled]="alpha == ''" (click)="reset()"><span class="material-icons">undo</span>
+    </button>
+  </div>
+  <div style='float: right;'>
+    <button mat-raised-button color="primary" [disabled]="alpha == ''" (click)="clickButton()"><span
+      class="material-icons">send</span></button>
+  </div>
+</div>

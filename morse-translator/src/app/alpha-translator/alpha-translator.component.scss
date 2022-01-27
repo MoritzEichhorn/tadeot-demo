@@ -1,0 +1,34 @@
+.full-width {
+  width: 100%;
+}
+
+.card {
+  max-width: 50%;
+  width: 50%;
+}
+
+.header {
+  margin: 0 10px;
+  height: 28px;
+  vertical-align: text-bottom;
+
+}
+
+.symbol{
+  margin-right: 10px;
+}
+
+.buttons{
+  margin: 0 10px 0 0;
+  width: 64px;
+  height: 100%;
+}
+
+.buttons div {
+  position: absolute;
+  bottom: 0;
+}
+
+.buttons button{
+  margin-top: 10px;
+}
