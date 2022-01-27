@@ -1,0 +1,219 @@
+apiVersion: v1
+items:
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -o morse.yml
+        kompose.service.type: nodeport
+        kompose.version: 1.26.0 (HEAD)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: morse-backend
+      name: morse-backend
+    spec:
+      ports:
+        - name: "9190"
+          port: 9190
+          targetPort: 80
+      selector:
+        io.kompose.service: morse-backend
+      type: NodePort
+    status:
+      loadBalancer: {}
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -o morse.yml
+        kompose.service.type: nodeport
+        kompose.version: 1.26.0 (HEAD)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: morse-database
+      name: morse-database
+    spec:
+      ports:
+        - name: "1433"
+          port: 1433
+          targetPort: 1433
+      selector:
+        io.kompose.service: morse-database
+      type: NodePort
+    status:
+      loadBalancer: {}
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -o morse.yml
+        kompose.service.type: nodeport
+        kompose.version: 1.26.0 (HEAD)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: morse-frontend
+      name: morse-frontend
+    spec:
+      ports:
+        - name: "9090"
+          port: 9090
+          targetPort: 80
+      selector:
+        io.kompose.service: morse-frontend
+      type: NodePort
+    status:
+      loadBalancer: {}
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -o morse.yml
+        kompose.service.type: nodeport
+        kompose.version: 1.26.0 (HEAD)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: morse-backend
+      name: morse-backend
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          io.kompose.service: morse-backend
+      strategy: {}
+      template:
+        metadata:
+          annotations:
+            kompose.cmd: kompose convert -o morse.yml
+            kompose.service.type: nodeport
+            kompose.version: 1.26.0 (HEAD)
+          creationTimestamp: null
+          labels:
+            io.kompose.service: morse-backend
+        spec:
+          containers:
+            - image: ghcr.io/moritzeichhorn/morse-backend:latest
+              name: morse-backend
+              ports:
+                - containerPort: 80
+              resources: {}
+          restartPolicy: Always
+    status: {}
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -o morse.yml
+        kompose.service.type: nodeport
+        kompose.version: 1.26.0 (HEAD)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: morse-database
+      name: morse-database
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          io.kompose.service: morse-database
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          annotations:
+            kompose.cmd: kompose convert -o morse.yml
+            kompose.service.type: nodeport
+            kompose.version: 1.26.0 (HEAD)
+          creationTimestamp: null
+          labels:
+            io.kompose.service: morse-database
+        spec:
+          containers:
+            - env:
+                - name: ACCEPT_EULA
+                  value: "Y"
+                - name: SA_PASSWORD
+                  value: Password1!
+              image: mcr.microsoft.com/mssql/server:2017-latest
+              name: morse-database
+              ports:
+                - containerPort: 1433
+              resources: {}
+              volumeMounts:
+                - mountPath: /var/opt/mssql/
+                  name: mssqlsystem
+                - mountPath: /var/opt/sqlserver
+                  name: mssqluser
+          restartPolicy: Always
+          volumes:
+            - name: mssqlsystem
+              persistentVolumeClaim:
+                claimName: mssqlsystem
+            - name: mssqluser
+              persistentVolumeClaim:
+                claimName: mssqluser
+    status: {}
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: mssqlsystem
+      name: mssqlsystem
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 100Mi
+    status: {}
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: mssqluser
+      name: mssqluser
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 100Mi
+    status: {}
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -o morse.yml
+        kompose.service.type: nodeport
+        kompose.version: 1.26.0 (HEAD)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: morse-frontend
+      name: morse-frontend
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          io.kompose.service: morse-frontend
+      strategy: {}
+      template:
+        metadata:
+          annotations:
+            kompose.cmd: kompose convert -o morse.yml
+            kompose.service.type: nodeport
+            kompose.version: 1.26.0 (HEAD)
+          creationTimestamp: null
+          labels:
+            io.kompose.service: morse-frontend
+        spec:
+          containers:
+            - image: ghcr.io/moritzeichhorn/morse-frontend:latest
+              name: morse-frontend
+              ports:
+                - containerPort: 80
+              resources: {}
+          restartPolicy: Always
+    status: {}
+kind: List
+metadata: {}
+

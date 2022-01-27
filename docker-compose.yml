@@ -11,20 +11,24 @@ services:
         environment:
             ACCEPT_EULA: "Y"
             SA_PASSWORD: "Password1!"
+        labels:
+            kompose.service.type: nodeport
     morse-backend:
-        image: morse-backend:latest
-        build: ./MorseCodeBackend
+        image: ghcr.io/moritzeichhorn/morse-backend:latest
         ports:
             - "9190:80"
         links:
             - morse-database
         depends_on:
             - morse-database
+        labels:
+            kompose.service.type: nodeport
     morse-frontend:
-        image: morse-frontend:latest
-        build: ./morse-translator
+        image: ghcr.io/moritzeichhorn/morse-frontend:latest
         ports:
             - "9090:80"
+        labels:
+            kompose.service.type: nodeport
 volumes:
   mssqlsystem: 
   mssqluser:          
