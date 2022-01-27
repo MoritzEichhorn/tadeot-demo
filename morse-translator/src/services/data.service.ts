@@ -14,7 +14,7 @@ interface IEntry {
   providedIn: 'root'
 })
 export class DataService {
-  url = 'http://192.168.49.2:30020/api/LogEntry';
+  url = 'https://htl-logs.yxa.at/api/LogEntry';
   dataSource = new MatTableDataSource<IEntry>();
 
   constructor(private httpClient: HttpClient) {
